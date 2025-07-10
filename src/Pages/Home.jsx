@@ -8,9 +8,9 @@ import Footer from "../Components/Footer"
 export default function Home() {
     return (
         <>
-            <section className=" flex flex-col items-center justify-center py-28 text-center px-4 bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
+            <section className=" flex flex-col items-center justify-center py-28 text-center px-4  bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
 
-                <h1 className="sm:text-5xl md:text-7xl font-heading font-extrabold tracking-tight">
+                <h1 className="text-5xl sm:text-5xl md:text-7xl font-heading font-extrabold tracking-tight">
                     <Typewriter
                         words={['Learn, Build', '100× Curiosity', 'Sleep? Later.']}
                         loop={true}

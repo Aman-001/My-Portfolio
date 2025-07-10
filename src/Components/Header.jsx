@@ -7,7 +7,7 @@ function Header() {
 
   return (
     <header>
-      <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between border-b border-gray-200 dark:border-gray-800 py-4 px-8 bg-white/30 dark:bg-black/30 backdrop-blur-md">
+      <nav className=" flex items-center justify-between border-b border-gray-200 dark:border-gray-800 py-4 px-8 bg-white/30 dark:bg-black/30 backdrop-blur-md">
         <div className="flex items-center">
           <img src="/logo.jpg" alt="Logo" className="h-12 w-12 rounded-full object-cover border border-gray-300 shadow-lg" />
           <span className="px-3 font-lobster text-2xl sm:text-3xl text-gray-900 dark:text-white">
@@ -35,7 +35,7 @@ function Header() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden fixed top-[64px] left-0 w-full bg-white dark:bg-black border-t border-gray-200 dark:border-gray-700 shadow-md">
+        <div className="md:hidden left-0 w-full bg-white dark:bg-black border-t border-gray-200 dark:border-gray-700 shadow-md">
           <ul className="flex flex-col space-y-4 py-4 px-6">
             <li><a href="#" onClick={() => setIsOpen(false)} className="font-robotoslab text-gray-900 dark:text-white hover:bg-blue-100 dark:hover:bg-gray-700 px-3 py-2 rounded">Home</a></li>
             <li><a href="#projects" onClick={() => setIsOpen(false)} className="font-robotoslab text-gray-900 dark:text-white hover:bg-blue-100 dark:hover:bg-gray-700 px-3 py-2 rounded">Projects</a></li>

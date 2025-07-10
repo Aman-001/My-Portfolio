@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="mt-24 px-4 text-center overflow-hidden pt-24">
+    <section id="contact" className="mt-5 px-4 text-center overflow-hidden pt-24">
       <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
         Let’s Connect
       </h2>
