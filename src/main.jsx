@@ -6,6 +6,16 @@ import App from './App.jsx';
 import '@fontsource/inter';
 import '@fontsource/poppins';
 
+const lenis = new window.Lenis({
+  smooth: true,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
