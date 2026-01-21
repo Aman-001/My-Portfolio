@@ -7,7 +7,7 @@ function Header() {
 
   return (
     <header>
-      <nav className=" flex items-center justify-between border-b border-gray-200 dark:border-gray-800 py-4 px-8 bg-white/30 dark:bg-black/30 backdrop-blur-md">
+      <nav className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 py-4 px-6 bg-white/30 dark:bg-black/30 backdrop-blur-md max-w-5xl mx-auto">
         <div className="flex items-center">
           <img src="/logo.jpg" alt="Logo" className="h-12 w-12 rounded-full object-cover border border-gray-300 shadow-lg" />
           <span className="px-3 font-lobster text-2xl sm:text-3xl text-gray-900 dark:text-white">
