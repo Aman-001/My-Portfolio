@@ -61,132 +61,55 @@ export default function Contact() {
     }
   }
 
-  return (
-    <section id="contact" className="mt-5 px-4 text-center overflow-hidden pt-24">
-      <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-4">
-        Let’s Connect
-      </h2>
+ return (
+  <section
+    id="contact"
+    className="relative bg-black px-4 py-32"
+  >
+    {/* Outer dashed container */}
+    <div className="relative max-w-6xl mx-auto border border-dashed border-gray-700 rounded-xl px-6 py-28 text-center overflow-hidden">
 
-      <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto font-semibold italic">
-        Big ideas, small questions, or just sharing memes? Drop a line — happy to connect!
-      </p>
+      {/* Corner + signs */}
+      <span className="absolute -top-1 -left-0 text-gray-500">+</span>
+      <span className="absolute -top-1 -right-0 text-gray-500">+</span>
+      <span className="absolute -bottom-1 -left-0 text-gray-500">+</span>
+      <span className="absolute -bottom-1 -right-0 text-gray-500">+</span>
 
-      <div className="max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          {/* Left: Contact info */}
-          <div className="p-8 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-            <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Get in touch</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">Prefer email? Use the form or reach me directly:</p>
+      {/* Glow blobs */}
+      <div className="absolute top-24 left-16 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-24 right-16 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
 
-            <div className="space-y-4 text-left">
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-gray-600 dark:text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-                <div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">Email</div>
-                  <a href={`mailto:${EMAIL_ADDRESS}`} className="text-sm font-medium text-blue-600 dark:text-blue-400">{EMAIL_ADDRESS}</a>
-                </div>
-              </div>
+      {/* Content */}
+      <div className="relative z-10">
+        <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          Let&apos;s work together
+        </h2>
 
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-gray-600 dark:text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7-5 7 5v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
-                </svg>
-                <div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">Location</div>
-                  <div className="text-sm font-medium text-gray-800 dark:text-gray-200">New Delhi, India</div>
-                </div>
-              </div>
+        <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+          Have a project in mind? Let&apos;s create something amazing.
+        </p>
 
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-gray-600 dark:text-gray-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2 8l10 6 10-6M2 16l10 6 10-6" />
-                </svg>
-                <div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">Availability</div>
-                  <div className="text-sm font-medium text-gray-800 dark:text-gray-200">Open to freelance & full-time</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <a
+            href={`mailto:${EMAIL_ADDRESS}`}
+            className="px-10 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition"
+          >
+            Email Me
+          </a>
 
-          {/* Right: Form */}
-          <div className="p-8 bg-white dark:bg-gray-900">
-            <form onSubmit={handleSubmit} className="space-y-4" aria-label="Contact form">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <label className="flex flex-col text-left">
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Name</span>
-                  <input
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    required
-                    className="mt-2 block w-full rounded-md border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Your name"
-                    aria-required="true"
-                  />
-                </label>
-
-                <label className="flex flex-col text-left">
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</span>
-                  <input
-                    name="email"
-                    type="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                    className="mt-2 block w-full rounded-md border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="you@example.com"
-                    aria-required="true"
-                  />
-                </label>
-              </div>
-
-              <label className="flex flex-col text-left">
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Subject</span>
-                <input
-                  name="subject"
-                  value={form.subject}
-                  onChange={handleChange}
-                  className="mt-2 block w-full rounded-md border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="What is this about?"
-                />
-              </label>
-
-              <label className="flex flex-col text-left">
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Message</span>
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  className="mt-2 block w-full rounded-md border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Any suggestions or questions?"
-                  aria-required="true"
-                />
-              </label>
-
-              <div className="flex items-center justify-between gap-4">
-                <button
-                  type="submit"
-                  disabled={status.sending}
-                  className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white rounded-md"
-                >
-                  {status.sending ? 'Sending...' : 'Send Message'}
-                </button>
-
-                <div className="text-sm text-left">
-                  {status.success === true && <div className="text-green-600 dark:text-green-400">Thanks — message sent!</div>}
-                  {status.success === false && <div className="text-red-600 dark:text-red-400">{status.error}</div>}
-                </div>
-              </div>
-            </form>
-          </div>
+             <a
+               href="/resume.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="px-10 py-3 rounded-full border border-gray-600 text-white font-medium hover:border-white transition inline-flex items-center gap-2"
+             >
+               Resume <span>→</span>
+             </a>
         </div>
       </div>
+    </div>
+  </section>
+);
 
-    </section>
-  );
 }
