@@ -1,7 +1,14 @@
+import { useEffect } from 'react';
 import Header from './Components/Header';
 import Home from './Pages/Home';
 
 export default function App() {
+  useEffect(() => {
+    // Always set dark mode
+    document.documentElement.classList.add('dark');
+    localStorage.theme = 'dark';
+  }, []);
+
   return (
     <>
       <Header />

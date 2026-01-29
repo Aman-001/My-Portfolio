@@ -1,33 +1,42 @@
-import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { SiGmail } from 'react-icons/si';
+import React, { useState, useEffect } from 'react';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Footer() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const location = 'Delhi, India';
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formattedTime = currentTime.toLocaleString('en-US', {
+    month: '2-digit',
+    day: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  });
+
   return (
-    <footer className="mt-12 py-6 text-center">
+    <footer className="mt-20 border-t border-gray-800 py-8 text-center">
+      <div className="flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto px-6 text-sm md:text-base text-gray-400">
+        {/* Left side - Credit */}
+        <p>
+          Designed & Developed by <span className="text-white font-semibold">Aman</span> © 2025. All rights reserved
+        </p>
 
-      {/* Icons row */}
-      <div className="flex justify-center gap-6 mb-3 text-gray-600 dark:text-gray-400 text-3xl">
-        <a href="https://github.com/Aman-001" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
-          <FaGithub />
-        </a>
-        <a href="https://www.linkedin.com/in/aman-singh-chauhan-4b3baa263/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
-          <FaLinkedin />
-        </a>
-        <a href="https://x.com/amanch6211327" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
-          <FaTwitter />
-        </a>
-       <a  href="mailto:amanc228d@gmail.com"  className="hover:text-blue-600">
-          <SiGmail />
-        </a>
-
+        {/* Right side - Location and Time */}
+        <div className="flex items-center gap-2 mt-4 md:mt-0">
+          <span>📍 {location}</span>
+          <span>{formattedTime.split(',')[1].trim()}</span>
+        </div>
       </div>
-
-      {/* Copy text */}
-      <p className="mt-2 text-base md:text-lg font-light tracking-wider text-gray-500 dark:text-gray-400 italic">
-        dev by night
-        <p className="text-3xl animate-tinker">☆</p>
-      </p>
     </footer>
   );
 }

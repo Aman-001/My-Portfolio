@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Toggle from './Toggle';
 import { HiMenuAlt3, HiX } from 'react-icons/hi'; // hamburger & close icons
 
 function Header() {
@@ -10,7 +9,7 @@ function Header() {
       <nav className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 py-4 px-6 bg-white/30 dark:bg-black/30 backdrop-blur-md max-w-5xl mx-auto">
         <div className="flex items-center">
           <img src="/logo.jpg" alt="Logo" className="h-12 w-12 rounded-full object-cover border border-gray-300 shadow-lg" />
-          <span className="px-3 font-lobster text-2xl sm:text-3xl text-gray-900 dark:text-white">
+          <span className="px-3 text-2xl sm:text-2xl italic text-gray-900 dark:text-white">
             Aman Singh Chauhan
           </span>
         </div>
@@ -22,7 +21,6 @@ function Header() {
             <li><a href="#projects" className="font-sans text-gray-900 dark:text-white hover:text-blue-600">Projects</a></li>
             <li><a href="#contact" className="font-sans text-gray-900 dark:text-white hover:text-blue-600">Contact</a></li>
           </ul>
-          <Toggle />
         </div>
 
         {/* Mobile hamburger */}
@@ -40,7 +38,6 @@ function Header() {
             <li><a href="#" onClick={() => setIsOpen(false)} className="font-robotoslab text-gray-900 dark:text-white hover:bg-blue-100 dark:hover:bg-gray-700 px-3 py-2 rounded">Home</a></li>
             <li><a href="#projects" onClick={() => setIsOpen(false)} className="font-robotoslab text-gray-900 dark:text-white hover:bg-blue-100 dark:hover:bg-gray-700 px-3 py-2 rounded">Projects</a></li>
             <li><a href="#contact" onClick={() => setIsOpen(false)} className="font-robotoslab text-gray-900 dark:text-white hover:bg-blue-100 dark:hover:bg-gray-700 px-3 py-2 rounded">Contact</a></li>
-            <div><Toggle /></div>
           </ul>
         </div>
       )}
