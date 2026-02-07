@@ -54,11 +54,6 @@ export default function Home() {
                         delaySpeed={2000}
                     />
                 </h3>
-                <div className="flex gap-4 justify-center text-3xl text-gray-500 dark:text-gray-400">
-                    <span title="Coffee Lover">☕</span>
-                    <span title="Always Building">⚙️</span>
-                    <span title="Night Owl">🌙</span>
-                </div>
             </section>
 
             <section id="projects" className="fade-up">
