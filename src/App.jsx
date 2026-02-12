@@ -15,12 +15,12 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 900);
+    const timer = setTimeout(() => setIsLoading(false), 2100);
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
-    return <LoadingShimmer />;
+    return <LoadingShimmer onComplete={() => setIsLoading(false)} />;
   }
 
   return (
